@@ -12,6 +12,7 @@ function getData(){
 
     var output = fetch(url);
     var json = output.json();
+    return json;
 }
 
 
