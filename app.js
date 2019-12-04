@@ -8,15 +8,15 @@ var port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
-function getData(){
+async function getData(){
 var url = "https://csuserversidewebdevfinal.herokuapp.com/";
-var output = fetch(url);
-var json = json(output);
+var output = await fetch(url);
+var json = await json(output);
 }
 
 app.get('/', function(req, res){
     
-   // getData();
+    getData();
     res.send(json);
 /*
     var title = json.title;
