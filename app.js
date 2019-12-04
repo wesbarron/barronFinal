@@ -7,22 +7,14 @@ var port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
-function getData(){
-    var url = "https://csuserversidewebdevfinal.herokuapp.com/";
 
-    var output = fetch(url);
-    var json = output.json();
-    return json;
-}
-
+var url = "https://csuserversidewebdevfinal.herokuapp.com/";
 
 app.get("/", async function(req, res){
     
-    var url = "https://csuserversidewebdevfinal.herokuapp.com/";
-
     var output = await fetch(url);
     var json = await output.json();
-    res.send(json);
+    res.send(<h1>Hello</h1>);
     /*
     res.render("index", {
         json: json
