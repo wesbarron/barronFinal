@@ -15,7 +15,7 @@ var json = await output.json();
 
 app.get('/', function (req, res){
     
-    res.send('<h1>Hello</h1>');
+    res.send(json);
     /*
     res.render("index", {
         json: json
