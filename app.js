@@ -15,11 +15,11 @@ app.get('/', function(req, res){
     
     var url = "https://csuserversidewebdevfinal.herokuapp.com/";
     var output = fetch(url);
-    //var json = await output.json();
+    var out = await output.json();
 
     
 
-    res.send(output.json());
+    res.send(out);
 /*
     var title = json.title;
     var image = json.url;
