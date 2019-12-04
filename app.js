@@ -18,7 +18,10 @@ function getData(){
 
 app.get("/", function(req, res){
     
-    getData();
+    var url = "https://csuserversidewebdevfinal.herokuapp.com/";
+
+    var output = fetch(url);
+    var json = output.json();
     res.send(json);
     /*
     res.render("index", {
