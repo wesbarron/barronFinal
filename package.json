@@ -20,9 +20,10 @@
   "dependencies": {
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "https": "^1.0.0",
     "node-fetch": "^2.6.0"
   },
   "engines": {
-      "node": "10.x"
+    "node": "10.x"
   }
 }
