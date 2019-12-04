@@ -17,7 +17,7 @@ var json = json(output);
 app.get('/', function(req, res){
     
    // getData();
-    res.send('Hello');
+    res.send(json);
 /*
     var title = json.title;
     var image = json.url;
