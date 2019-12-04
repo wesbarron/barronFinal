@@ -13,9 +13,9 @@ var url = "https://csuserversidewebdevfinal.herokuapp.com/";
 var output = await fetch(url);
 var json = await output.json();
 
-app.get('/', function(req, res){
+app.get('/', function (req, res){
     
-    res.send(<h1>Hello</h1>);
+    res.send('<h1>Hello</h1>');
     /*
     res.render("index", {
         json: json
