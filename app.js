@@ -12,7 +12,7 @@ var url = "https://csuserversidewebdevfinal.herokuapp.com/";
 var output = await fetch(url);
 var json = await output.json();
 
-app.get("/", async function(req, res){
+app.get('/', async function(req, res){
     
     res.send(<h1>Hello</h1>);
     /*
