@@ -10,17 +10,18 @@ var port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
+function getData(){
+    var url = "https://csuserversidewebdevfinal.herokuapp.com/";
+    var output = fetch(url);
+    var out = output.json(out);
+}
+
 
 app.get('/', function(req, res){
     
-    var url = "https://csuserversidewebdevfinal.herokuapp.com/";
-    var output = fetch(url);
-    var out = await output.json();
+    getData()    
 
-    
 
-    res.send(out);
-/*
     var title = json.title;
     var image = json.url;
     var description = json.explanation;
@@ -31,7 +32,7 @@ app.get('/', function(req, res){
         image:image,
         description:description,
         date:date
-    }); */
+    }); 
 });
 
 app.listen(port, function(){
