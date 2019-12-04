@@ -12,8 +12,12 @@ app.use(express.static(__dirname + '/public'));
 
 function getData(){
     var url = "https://csuserversidewebdevfinal.herokuapp.com/";
-    var output = fetch(url);
-    var out = output.json(out);
+    var output = fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    return data
+                });
+    
 }
 
 
@@ -22,10 +26,10 @@ app.get('/', function(req, res){
     getData()    
 
 
-    var title = json.title;
-    var image = json.url;
-    var description = json.explanation;
-    var date = json.date;
+    var title = data.title;
+    var image = data.url;
+    var description = data.explanation;
+    var date = data.date;
     
     res.render("index", {
         title:title,
