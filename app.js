@@ -9,11 +9,11 @@ app.use(express.static(__dirname + '/public'));
 
 
 var url = "https://csuserversidewebdevfinal.herokuapp.com/";
+var output = await fetch(url);
+var json = await output.json();
 
 app.get("/", async function(req, res){
     
-    var output = await fetch(url);
-    var json = await output.json();
     res.send(<h1>Hello</h1>);
     /*
     res.render("index", {
