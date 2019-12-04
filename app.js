@@ -17,6 +17,7 @@ function getData(){
 app.get("/", function(req, res){
     
     getData();
+    res.send(json);
     res.render("index", {
         json: json
     });
