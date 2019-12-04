@@ -8,24 +8,28 @@ var port = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
-async function getData(){
+function getData(){
 var url = "https://csuserversidewebdevfinal.herokuapp.com/";
-var output = await fetch(url);
-var json = await output.json();
+var output = fetch(url);
+var json = json(output);
 }
 
-app.get('/', function (req, res){
+app.get('/', function(req, res){
     
-    getData();
-
+   // getData();
+    res.send('Hello');
+/*
     var title = json.title;
     var image = json.url;
+    var description = json.explanation;
+    var date = json.date;
     
     res.render("index", {
         title:title,
         image:image,
-
-    });
+        description:description,
+        date:date
+    }); */
 });
 
 app.listen(port, function(){
